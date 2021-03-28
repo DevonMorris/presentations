@@ -19,6 +19,11 @@ date: April 2, 2021
 
 ## "Note Box"
 
+##
+![](./assets/slipbox.jpg){ width=70% }
+
+[Creative commons licensed image](https://en.wikipedia.org/wiki/Zettelkasten#/media/File:Zettelkasten_(514941699))
+
 # History
 
 # Engineering
