@@ -98,11 +98,6 @@ g(x_1, x_2, x_3) = f_1(x_1,x_2)f_2(x_1,x_2,x_3)f_3(x_3)
 $$
 ![](./assets/factor_example.png){ width=70% }
 
-## Factor Graph
-![](./assets/factor_observed.png){ width=70% }
-
-Notation for observed
-
 # Bayesian Estimation
 
 ## Bayesian Inference
@@ -161,10 +156,51 @@ $$
 $$
 \begin{aligned}
 \argmax_x \ln p(x) =& \argmax_x -\frac{1}{2}\ln\left\{(2\pi)^k \left|\Sigma_x\right|\right\} \\
-&-\frac{1}{2}(x - \mu_x)^\top (\Sigma_x)^{-1} (x - \mu_x) \\
-=& \argmax_x -\frac{1}{2}(x - \mu_x)^\top (\Sigma_x)^{-1} (x - \mu_x) \\
+&-\frac{1}{2}(x - \mu_x)^\top \Sigma_x^{-1} (x - \mu_x) \\
+=& \argmax_x -\frac{1}{2}(x - \mu_x)^\top \Sigma_x^{-1} (x - \mu_x) \\
 =& \argmin_x (x - \mu_x)^\top (\Sigma_x)^{-1} (x - \mu_x) \\
 \end{aligned}
 $$
 
 # Gaussian MAP Estimation
+
+## Recall MAP
+$$
+\hat{x}^{MAP} = \argmax_x p(x|z)
+$$
+
+## Gaussian Prior & Likelihood
+$$
+\begin{aligned}
+x &\sim \mathcal{N}(\mu_x, \Sigma_x) \\
+z|x &\sim \mathcal{N}(C\mu_x, R)
+\end{aligned}
+$$
+
+## MAP Estimate
+$$
+\begin{aligned}
+\hat{x}^{MAP} =& \argmin_x (x - \mu_x)^\top \Sigma_x^{-1} (x - \mu_x) \\
+&+ (z - C\mu_x)^\top R^{-1} (z - C\mu_x)
+\end{aligned}
+$$
+
+# Kalman
+
+## Linear Transition & Measurement
+$$
+\begin{aligned}
+x_k &= Ax_{k-1} + Bu_k + \epsilon_k \\
+z_k &= Cx_k + \nu_k \\
+\epsilon_k &\sim \mathcal{N}(0, Q_k) \\
+\nu_k &\sim \mathcal{N}(0, R_k) \\
+\end{aligned}
+$$
+
+## Some Definitions
+$$
+\begin{aligned}
+X_k &= \left\{x_k, \dots, x_0\right\} \\
+Z_k &= \left\{z_k, \dots, z_0\right\} \\
+\end{aligned}
+$$
