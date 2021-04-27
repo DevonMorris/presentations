@@ -3,6 +3,9 @@ author: Devon Morris
 title: Factor Graphs
 subtitle: "What does Devon Keep Ranting About?"
 date: April 30, 2021
+header-includes:
+    - \newcommand{\argmin}{\mathop{\mathrm{argmin}}\limits}
+    - \newcommand{\argmax}{\mathop{\mathrm{argmax}}\limits}
 ---
 # Factors
 
@@ -87,3 +90,81 @@ $$
 &E \subseteq U \times V
 \end{aligned}
 $$
+![](./assets/factor_example.png){ width=70% }
+
+## Factor Graph
+$$
+g(x_1, x_2, x_3) = f_1(x_1,x_2)f_2(x_1,x_2,x_3)f_3(x_3)
+$$
+![](./assets/factor_example.png){ width=70% }
+
+## Factor Graph
+![](./assets/factor_observed.png){ width=70% }
+
+Notation for observed
+
+# Bayesian Estimation
+
+## Bayesian Inference
+$$
+p(x|z) = \frac{1}{\eta} p(z|x)p(x)
+$$
+
+Factors!!!
+
+## Factor Graph
+$$
+p(x|z) = \frac{1}{\eta} p(z|x)p(x)
+$$
+![](./assets/bayesian_inference.png){ width=60% }
+
+## MAP Estimate
+$$
+\hat{x}^{MAP} = \argmax_x p(x|z)
+$$
+
+## MAP Estimate
+$$
+\begin{aligned}
+\hat{x}^{MAP} &= \argmax_x p(x|z) \\
+&= \argmax_x \frac{1}{\eta} p(z|x)p(x) \\
+&= \argmax_x p(z|x)p(x)
+\end{aligned}
+$$
+
+## MAP Estimate
+$$
+\begin{aligned}
+\hat{x}^{MAP} &= \argmax_x p(z|x)p(x) \\
+&= \argmax_x \ln{p(z|x)} + \ln{p(x)}
+\end{aligned}
+$$
+
+# Multivariate Normal
+
+## Random Variable
+$$
+x \sim \mathcal{N}(\mu_x, \Sigma_x)
+$$
+
+## Probability Density
+$$
+p(x) = \frac{1}{\sqrt{(2\pi)^k \left|\Sigma_x\right|}} \exp\left\{-\frac{1}{2}(x - \mu_x)^\top (\Sigma_x)^{-1} (x - \mu_x)\right\}
+$$
+
+## Log Probability Density
+$$
+\ln p(x) = -\frac{1}{2}\ln\left\{(2\pi)^k \left|\Sigma_x\right|\right\} -\frac{1}{2}(x - \mu_x)^\top (\Sigma_x)^{-1} (x - \mu_x)
+$$
+
+## Argmax
+$$
+\begin{aligned}
+\argmax_x \ln p(x) =& \argmax_x -\frac{1}{2}\ln\left\{(2\pi)^k \left|\Sigma_x\right|\right\} \\
+&-\frac{1}{2}(x - \mu_x)^\top (\Sigma_x)^{-1} (x - \mu_x) \\
+=& \argmax_x -\frac{1}{2}(x - \mu_x)^\top (\Sigma_x)^{-1} (x - \mu_x) \\
+=& \argmin_x (x - \mu_x)^\top (\Sigma_x)^{-1} (x - \mu_x) \\
+\end{aligned}
+$$
+
+# Gaussian MAP Estimation
