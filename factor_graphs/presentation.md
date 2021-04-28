@@ -250,7 +250,7 @@ x_k &\sim \mathcal{N}(A\hat{x}_{k-1} + Bu_k, A \Sigma_k A^\top + Q_k)
 $$
 
 ## Kalman Update
-![](./assets/kalman_update.png){ width=70% }
+![](./assets/kalman_update.png){ width=80% }
 
 This is dumb because we have closed form solutions
 
