@@ -7,6 +7,14 @@ header-includes:
     - \newcommand{\argmin}{\mathop{\mathrm{argmin}}\limits}
     - \newcommand{\argmax}{\mathop{\mathrm{argmax}}\limits}
 ---
+# This is Dense
+
+## I'm Sorry
+
+## Interrupt Me Please
+
+## Ask Questions
+
 # Factors
 
 ## Factorization
@@ -135,6 +143,27 @@ $$
 \end{aligned}
 $$
 
+## Marginalization
+$$
+\begin{aligned}
+p(x,y) = \int_{Z} p(x,y,z) dz
+\end{aligned}
+$$
+
+## Marginalization
+![](./assets/marginalization.png){ width=90% }
+
+## Marginalization
+Geometrically, marginalization is orthogonal projection
+![](./assets/marginalization_projection.png){ width=80% }
+
+## Marginalization
+The parts we don't have time to cover
+
+* Sum-Product Algorithm - Belief Propagation
+* Bayes Trees - Data Structure To Help Marginalization & Sparsity
+* Schur Complement - Gaussian Case
+
 # Multivariate Normal
 
 ## Random Variable
@@ -197,10 +226,53 @@ z_k &= Cx_k + \nu_k \\
 \end{aligned}
 $$
 
-## Some Definitions
+## Quick Note
+By the definition of conditional probability
 $$
 \begin{aligned}
-X_k &= \left\{x_k, \dots, x_0\right\} \\
-Z_k &= \left\{z_k, \dots, z_0\right\} \\
+p(x_k, x_{k-1}) = p(x_k|x_{k-1})p(x_{k-1})
 \end{aligned}
 $$
+
+## Kalman Prediction
+![](./assets/kalman_predict.png){ width=70% }
+
+This is dumb because we have closed form solutions
+
+## Kalman Prediction - Closed Form
+$$
+\begin{aligned}
+x_{k-1} &\sim \mathcal{N}(\hat{x}_{k-1}, \Sigma_k) \\
+x_{k}|x_{k-1} &\sim \mathcal{N}(Ax_{k-1} + Bu_k, Q_k) \\
+&\downarrow \\
+x_k &\sim \mathcal{N}(A\hat{x}_{k-1} + Bu_k, A \Sigma_k A^\top + Q_k)
+\end{aligned}
+$$
+
+## Kalman Update
+![](./assets/kalman_update.png){ width=70% }
+
+This is dumb because we have closed form solutions
+
+## Kalman Update - Closed Form
+
+## One Step Kalman Smoother
+
+## Example
+
+## Fixed Lag Kalman Smoother
+
+## Localization
+
+
+# Nonlinear Kalman
+
+## Example
+
+# Next Time
+
+## Lie Theory
+
+## Factor Graphs on Manifolds
+
+## Calibration!
