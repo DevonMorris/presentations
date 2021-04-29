@@ -155,6 +155,7 @@ $$
 
 ## Marginalization
 Geometrically, marginalization is orthogonal projection
+
 ![](./assets/marginalization_projection.png){ width=80% }
 
 ## Marginalization
@@ -255,19 +256,32 @@ $$
 This is dumb because we have closed form solutions
 
 ## Kalman Update - Closed Form
+$$
+\begin{aligned}
+x_{k} &\sim \mathcal{N}(\hat{x}_{k|k-1}, \Sigma_{k|k-1}) \\
+z_{k}|x_{k} &\sim \mathcal{N}(Cx_{k}, R_k) \\
+&\downarrow \\
+x_k &\sim \mathcal{N}(\hat{x}_{k|k-1} - K(z_k - C\hat{x}_{k|k-1}), (I - KC)\Sigma_{k|k-1})
+\end{aligned}
+$$
 
 ## One Step Kalman Smoother
+![](./assets/kalman_smoother_one.png){ width=80% }
+
+This is not dumb, because the closed form solution is much messier
 
 ## Example
+[gtsam](https://gtsam.org/)
 
 ## Fixed Lag Kalman Smoother
+![](./assets/kalman_smoother_fix.png){ width=80% }
 
-## Localization
+This is **very** not dumb, because the closed form solution is much messier
 
+## OOSM
+![](./assets/oosm.png){ width=80% }
 
-# Nonlinear Kalman
-
-## Example
+This is **very** **very** not dumb, no backward prediction required.
 
 # Next Time
 
@@ -276,3 +290,5 @@ This is dumb because we have closed form solutions
 ## Factor Graphs on Manifolds
 
 ## Calibration!
+
+## ISAM
