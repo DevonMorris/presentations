@@ -283,12 +283,49 @@ This is **very** not dumb, because the closed form solution is much messier
 
 This is **very** **very** not dumb, no backward prediction required.
 
+## Nonlinear
+$$
+\begin{aligned}
+x_k &= f(x_{k-1},u_k) + \epsilon_k \\
+z_k &= h(x_k) + \nu_k \\
+\epsilon_k &\sim \mathcal{N}(0, Q_k) \\
+\nu_k &\sim \mathcal{N}(0, R_k) \\
+\end{aligned}
+$$
+
+## Nonlinear Predict
+![](./assets/kalman_predict.png){ width=70% }
+
+Not dumb, because no closed-form solution exists!
+
+## Nonlinear Update
+![](./assets/kalman_update.png){ width=80% }
+
+Not dumb, because no closed-form solution exists!
+
+## Nonlinear Predict & Update
+Is this equivalent to the EKF algorithm?
+
+* No, it should be better
+
 # Next Time
+
+## Manifolds
 
 ## Lie Theory
 
+## Multiplicative Kalman Filters (MEKF)
+
+# Next Next Time
+
 ## Factor Graphs on Manifolds
 
-## Calibration!
+## Calibration
 
 ## ISAM
+
+# Additional Topics To Investigate
+
+## Nonlinear Optimization
+
+## Marginalization
