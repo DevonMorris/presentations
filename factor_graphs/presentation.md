@@ -95,7 +95,7 @@ $$
 $$
 \begin{aligned}
 &G = (X,F,E) \\
-&E \subseteq U \times V
+&E \subseteq X \times F
 \end{aligned}
 $$
 ![](./assets/factor_example.png){ width=70% }
