@@ -1,6 +1,6 @@
 # Presentations
 
-These are presenations that I give. They are generated from markdown using
+These are presentations that I give. They are generated from markdown using
 pandoc and I usually choose `reveal.js` as the output because it generally
 looks good and supports `mp4` playback.
 

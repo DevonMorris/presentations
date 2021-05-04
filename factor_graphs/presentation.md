@@ -7,14 +7,6 @@ header-includes:
     - \newcommand{\argmin}{\mathop{\mathrm{argmin}}\limits}
     - \newcommand{\argmax}{\mathop{\mathrm{argmax}}\limits}
 ---
-# This is Dense
-
-## I'm Sorry
-
-## Interrupt Me Please
-
-## Ask Questions
-
 # Factors
 
 ## Factorization
